@@ -1,586 +1,527 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Avanza Conmigo – Mentoría en Vivo para Emprendedores Jóvenes</title>
-<meta name="description" content="Avanza Conmigo ofrece mentoría en vivo para jóvenes emprendedores de Chimbote. Programa completo, niveles, comunidad y gamificación. ¡Únete!"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet" />
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-<style>
-  /* Tipografía custom */
-  body {
-    font-family: 'Inter', sans-serif;
-  }
-  h1, h2, h3, h4 {
-    font-family: 'Poppins', sans-serif;
-  }
-  /* Animación de fondo de hero */
-  .animated-bg {
-    background: linear-gradient(-45deg, #fb6c17, #e42222, #ff6f00, #c71f1f);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
-  }
-  @keyframes gradientBG {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-  }
-  /* Header scroll */
-  header.scrolled {
-    background: rgba(251, 108, 23, 0.95);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  /* Micro animaciones botones */
-  button, a.button {
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-  button:hover, a.button:hover,
-  button:focus, a.button:focus {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(251, 108, 23, 0.7);
-    outline: none;
-  }
-  /* FAQ ACCORDION */
-  .faq-question {
-    cursor: pointer;
-  }
-  .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.45s ease;
-  }
-  .faq-answer.open {
-    max-height: 500px;
-    margin-top: 0.5rem;
-  }
-  /* Scrollbar slider testimonios*/
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  /* Overlay mobile menu */
-  #mobile-menu.overlay-open {
-    position: fixed !important;
-    inset: 0;
-    background: rgba(251, 108, 23, 0.95);
-    backdrop-filter: saturate(180%) blur(15px);
-    z-index: 60;
-    padding-top: 4rem;
-    overflow-y: auto;
-    transition: transform 0.3s ease;
-  }
-  #mobile-menu {
-    transition: transform 0.3s ease;
-  }
-  #mobile-menu.hide {
-    transform: translateX(100%);
-  }
-  #mobile-menu.show {
-    transform: translateX(0);
-  }
-  /* Logo SVG styling */
-  .logo-svg path {
-    fill: #FBB418;
-    stroke: #fff;
-    stroke-width: 1.5;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama de Pareto aplicado con tecnologías modernas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #1a365d;
+            --primary: #2c5282;
+            --primary-light: #4299e1;
+            --accent: #dd6b20;
+            --neutral-dark: #2d3748;
+            --neutral: #4a5568;
+            --neutral-light: #e2e8f0;
+            --success: #38a169;
+            --warning: #d69e2e;
+            --danger: #e53e3e;
+        }
+        body {
+            font-family: 'Roboto', 'Segoe UI', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e6f0ff 0%, #c9e0ff 100%);
+            color: var(--neutral-dark);
+            font-weight: 400;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 2em auto;
+            background: linear-gradient(to bottom, #ffffff, #e6f2ff);
+            border: 1px solid rgba(66, 153, 225, 0.3);
+            box-shadow: 0 10px 30px rgba(66, 153, 225, 0.15);
+            padding: 3em;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255,255,255,0.4);
+            background-clip: padding-box;
+            position: relative;
+            overflow: hidden;
+        }
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(to right, var(--primary-dark), var(--accent));
+        }
+        h1 {
+            color: var(--primary-dark);
+            font-size: 3rem;
+            margin-bottom: 0.5em;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 0.5em;
+            line-height: 1.2;
+        }
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 30px;
+            font-size: 2rem;
+        }
+        h3 {
+            color: #34495e;
+            margin-top: 20px;
+        }
+        p {
+            margin: 10px 0;
+        }
+        .chart-container {
+            position: relative;
+            margin: 2em 0;
+            padding: 1.5em;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(66, 153, 225, 0.1);
+        }
+        .chart-container:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        canvas {
+            width: 100% !important;
+            height: auto !important;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        .reference {
+            margin-top: 10px;
+            font-style: italic;
+        }
+        
+        .technical-conclusion {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 5px solid #2980b9;
+        }
+        
+        .benefits-list {
+            columns: 2;
+            column-gap: 40px;
+        }
+        
+        .tech-integration {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .tech-card {
+            flex: 1;
+            background: white;
+            padding: 1.5em;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .tech-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+        }
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(66, 153, 225, 0.2);
+            cursor: pointer;
+            background: linear-gradient(to right, #ffffff, #f0f7ff);
+            border-left: 4px solid #3182ce;
+        }
+        
+        .future-outlook {
+            list-style-type: decimal;
+            padding-left: 20px;
+        }
+        
+        .future-outlook li {
+            margin-bottom: 10px;
+        }
+        .highlight-blue {
+            color: #2b6cb0;
+            background-color: #ebf5ff;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            display: inline-block;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(66, 153, 225, 0.2);
+            transition: all 0.3s ease;
+        }
+            background-color: #eaf2f8;
+            padding: 10px;
+            border-left: 5px solid #3498db;
+        }
+        
+        /* Tab styling */
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            border-radius: 5px 5px 0 0;
+            margin-top: 20px;
+        }
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 1em 1.5em;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .tab button:hover {
+            background-color: rgba(66, 153, 225, 0.1);
+        }
+        .tab button.active::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+        }
+        .tab button:hover {
+            background-color: #ddd;
+        }
+        .tab button.active {
+            background-color: #2980b9;
+            color: white;
+        }
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-top: none;
+            animation: fadeEffect 1s;
+        }
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        
+        .fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(to right, #3182ce, #63b3ed);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(49, 130, 206, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        
+        .fab:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 6px 20px rgba(49, 130, 206, 0.4);
+        }
+    </style>
 </head>
-<body class="bg-white text-gray-900 selection:bg-yellow-400 selection:text-gray-900">
-
-<!-- HEADER CON LOGO SVG + NAVEGACION STICKY -->
-<header id="page-header" class="sticky top-0 z-50 bg-transparent">
-  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 transition-colors duration-300">
-    <a href="#" class="flex items-center space-x-3 select-none" aria-label="Avanza Conmigo Home" title="Avanza Conmigo Home">
-      <!-- Logo SVG -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90" class="logo-svg h-10 w-10" aria-hidden="true" role="img" >
-        <circle cx="45" cy="45" r="44" stroke="#FBB418" stroke-width="3" fill="none"/>
-        <path d="M40 65L30 45L40 25L60 25L60 65Z" />
-        <path d="M40 50L55 50" stroke="#FBB418" stroke-width="4" stroke-linecap="round" />
-      </svg>
-      <span class="text-3xl font-poppins font-bold tracking-tight text-yellow-400 drop-shadow-lg">Avanza Conmigo</span>
-    </a>
-    <nav class="hidden md:flex space-x-10 font-semibold text-white drop-shadow-md">
-      <a href="#mentorias" class="hover:underline hover:text-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2">Mentorías</a>
-      <a href="#niveles" class="hover:underline hover:text-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2">Niveles</a>
-      <a href="#beneficios" class="hover:underline hover:text-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2">Beneficios</a>
-      <a href="#mentores" class="hover:underline hover:text-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2">Mentores</a>
-      <a href="#testimonios" class="hover:underline hover:text-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2">Testimonios</a>
-      <a href="#faq" class="hover:underline hover:text-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2">FAQ</a>
-    </nav>
-    <a href="#inscribete" class="hidden md:inline-block bg-yellow-400 text-gray-900 rounded-lg px-5 py-3 font-bold shadow-md hover:bg-yellow-300 focus:outline-none focus:ring-4 focus:ring-yellow-400 focus:ring-offset-2 transition transform hover:scale-105">
-      Quiero mi mentoría
-    </a>
-
-    <button id="mobile-menu-button" aria-label="Abrir menú" aria-expanded="false" class="md:hidden text-yellow-400 hover:text-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" >
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"/>
-      </svg>
-    </button>
-  </div>
-  <!-- Menú móvil -->
-  <nav id="mobile-menu" class="hidden md:hidden"></nav>
-</header>
-
-<!-- HERO con fondo animado -->
-<section class="relative h-screen flex flex-col justify-center items-center text-center px-6 animated-bg text-white select-none overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-tr from-black via-transparent to-black opacity-70 pointer-events-none"></div>
-  <h1 class="relative text-6xl md:text-8xl font-poppins font-extrabold tracking-tight drop-shadow-[0_2px_10px_rgba(251,108,23,0.9)] max-w-4xl mx-auto z-10 leading-tight">
-    Avanza Conmigo
-  </h1>
-  <p class="relative mt-6 text-xl md:text-3xl max-w-2xl mx-auto font-semibold drop-shadow-[0_1px_6px_rgba(255,255,255,0.8)] leading-relaxed z-10">
-    Mentoría real para emprendedores reales en <mark class="bg-yellow-400 text-gray-900 rounded px-1.5">Chimbote</mark>
-  </p>
-  <a href="#inscribete" class="relative mt-14 inline-block bg-yellow-400 text-gray-900 text-2xl tracking-wide font-bold rounded-lg px-10 py-4 shadow-2xl hover:bg-yellow-300 focus:outline-none focus:ring-4 focus:ring-yellow-400 transition transform hover:scale-110 z-10" role="button">
-    ¡Quiero mi mentoría!
-  </a>
-  <svg viewBox="0 0 1440 320" class="absolute bottom-0 left-0 right-0 w-full pointer-events-none" aria-hidden="true" style="z-index:5">
-    <path fill="white" fill-opacity="1" d="M0,224L48,224C96,224,192,224,288,218.7C384,213,480,203,576,202.7C672,203,768,213,864,234.7C960,256,1056,288,1152,293.3C1248,299,1344,277,1392,266.7L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-  </svg>
-</section>
-
-<!-- MENTORÍAS EN VIVO (DISEÑO REFINADO) -->
-<section id="mentorias" class="max-w-7xl mx-auto my-28 px-6 md:px-10" aria-labelledby="mentorias-title">
-  <h2 id="mentorias-title" class="text-gray-900 text-4xl md:text-5xl font-extrabold mb-12 text-center">Mentorías en Vivo: Crece con Apoyo Real y Directo</h2>
-  <div class="grid md:grid-cols-2 gap-16 items-center">
-    <article class="space-y-8">
-      <p class="text-gray-700 text-lg md:text-xl leading-relaxed drop-shadow-[0_1px_1px_rgba(0,0,0,0.04)]">
-        En <strong>Avanza Conmigo</strong> brindamos mentorías en vivo, 100% personalizadas, con expertos que acompañan tu proceso para que avances paso a paso con claridad y confianza.
-      </p>
-      <ul class="space-y-5 text-gray-700 text-lg">
-        <li class="flex items-center gap-4">
-          <svg class="h-7 w-7 text-yellow-400 flex-none" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M5 13l4 4L19 7" />
-          </svg> Mentoría 1 a 1 en tiempo real
-        </li>
-        <li class="flex items-center gap-4">
-          <svg class="h-7 w-7 text-yellow-400 flex-none" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M5 13l4 4L19 7" />
-          </svg> Resolución inmediata de dudas
-        </li>
-        <li class="flex items-center gap-4">
-          <svg class="h-7 w-7 text-yellow-400 flex-none" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M5 13l4 4L19 7" />
-          </svg> Agenda flexible que se adapta a ti
-        </li>
-        <li class="flex items-center gap-4">
-          <svg class="h-7 w-7 text-yellow-400 flex-none" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M5 13l4 4L19 7" />
-          </svg> Seguimiento personalizado de tu progreso
-        </li>
-      </ul>
-    </article>
-    <figure class="rounded-xl overflow-hidden shadow-2xl ring-1 ring-black ring-opacity-10">
-      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e41b3fd9-14df-48ed-942a-d18bdcc58dd7.png" alt="Mentor y emprendedor conversando en sesión en vivo a través de video llamada" class="w-full h-auto object-cover" loading="lazy" />
-    </figure>
-  </div>
-</section>
-
-<!-- PERFILES DE MENTORES (DISEÑO + SOMBRAS) -->
-<section id="mentores" class="bg-gray-50 py-24 px-6 md:px-10 max-w-7xl mx-auto" aria-labelledby="mentores-title">
-  <h2 id="mentores-title" class="text-center text-4xl font-extrabold mb-16 text-gray-900">Conoce a Nuestros Mentores</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
-    <article class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center transition hover:scale-[1.04] hover:shadow-2xl focus-within:scale-[1.04] focus-within:shadow-2xl">
-      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/24748783-bd10-4f51-a19d-4aadb3aa043f.png" alt="Foto de Ana Torres, mentora de emprendimientos sociales" class="rounded-full mb-6 object-cover w-32 h-32" loading="lazy" />
-      <h3 class="font-semibold text-2xl mb-1">Ana Torres</h3>
-      <p class="text-gray-600 mb-4 max-w-xs">Experta en negocios sociales y marketing emocional</p>
-      <blockquote class="italic font-semibold text-yellow-400 max-w-xs">“Acompañarte para transformar sueños en realidades”</blockquote>
-    </article>
-
-    <article class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center transition hover:scale-[1.04] hover:shadow-2xl focus-within:scale-[1.04] focus-within:shadow-2xl">
-      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a70065fd-be50-4dd6-be8c-0d2da527726c.png" alt="Foto de Carlos Rojas, mentor experto en startups y tecnología" class="rounded-full mb-6 object-cover w-32 h-32" loading="lazy" />
-      <h3 class="font-semibold text-2xl mb-1">Carlos Rojas</h3>
-      <p class="text-gray-600 mb-4 max-w-xs">Especialista en innovación y validación de clientes</p>
-      <blockquote class="italic font-semibold text-yellow-400 max-w-xs">“El camino del éxito empieza con el primer paso”</blockquote>
-    </article>
-
-    <article class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center transition hover:scale-[1.04] hover:shadow-2xl focus-within:scale-[1.04] focus-within:shadow-2xl">
-      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e3e876f7-bd65-4e07-baa6-d8e6379f805e.png" alt="Foto de Luisa Medina, coach de liderazgo para emprendedores" class="rounded-full mb-6 object-cover w-32 h-32" loading="lazy" />
-      <h3 class="font-semibold text-2xl mb-1">Luisa Medina</h3>
-      <p class="text-gray-600 mb-4 max-w-xs">Coach en liderazgo, equipo y escalabilidad</p>
-      <blockquote class="italic font-semibold text-yellow-400 max-w-xs">“Crecemos juntos, crecemos fuerte”</blockquote>
-    </article>
-
-    <article class="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center transition hover:scale-[1.04] hover:shadow-2xl focus-within:scale-[1.04] focus-within:shadow-2xl">
-      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b462bcd2-a39e-48f8-acd6-bfc6c189a1b4.png" alt="Foto de Diego Flores, mentor en finanzas y modelo de negocio sostenible" class="rounded-full mb-6 object-cover w-32 h-32" loading="lazy" />
-      <h3 class="font-semibold text-2xl mb-1">Diego Flores</h3>
-      <p class="text-gray-600 mb-4 max-w-xs">Finanzas para emprendedores + modelos sostenibles</p>
-      <blockquote class="italic font-semibold text-yellow-400 max-w-xs">“Tu negocio, tu impacto, tu legado”</blockquote>
-    </article>
-  </div>
-</section>
-
-<!-- NIVELES DEL PROGRAMA (HOVER + ICONS) -->
-<section id="niveles" class="max-w-7xl mx-auto py-28 px-6 md:px-10" aria-labelledby="niveles-title">
-  <h2 id="niveles-title" class="text-center text-4xl font-extrabold mb-16 text-gray-900">Niveles del Programa</h2>
-  <div class="grid md:grid-cols-3 gap-12">
-    <div class="relative group bg-white p-10 rounded-3xl shadow-lg border-l-8 border-orange-500 cursor-default transform transition hover:-translate-y-3 hover:shadow-2xl">
-      <div class="flex justify-center mb-6">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-orange-500 group-hover:text-orange-600 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true" >
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-        </svg>
-      </div>
-      <h3 class="text-3xl font-semibold mb-4">Nivel 1: Explora</h3>
-      <p class="text-gray-700 mb-6 leading-relaxed font-medium">Descubre tu propósito y reconoce los bloqueos que te detienen para avanzar.</p>
-      <ul class="list-disc text-gray-600 space-y-2 max-w-sm mx-auto">
-        <li>Autoevaluación profunda</li>
-        <li>Identificación de bloqueos emocionales</li>
-      </ul>
-      <div aria-hidden="true" class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-20 h-20 bg-orange-200 rounded-full opacity-20 blur-3xl group-hover:opacity-40 transition"></div>
+<body>
+<div class="container">
+    <div class="hero-header">
+        <h1>Análisis con Diagrama de Pareto: <span class="highlight-blue">Herramienta Clave para Excelencia Operacional</span></h1>
+        <h2 class="subtitle"><i class="fas fa-chart-line"></i> Implementación Avanzada desde Cero hasta Integración con IA</h2>
+        <div class="header-meta">
+            <span class="meta-item"><i class="fas fa-user-tie"></i> Para Directores de Calidad</span>
+            <span class="meta-item"><i class="fas fa-industry"></i> Casos Reales Multinacionales</span>
+        </div>
     </div>
 
-    <div class="relative group bg-white p-10 rounded-3xl shadow-lg border-l-8 border-red-600 cursor-default transform transition hover:-translate-y-3 hover:shadow-2xl">
-      <div class="flex justify-center mb-6">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-red-600 group-hover:text-red-700 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true" >
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m2 0a2 2 0 102-2 2 2 0 00-2 2zM7 12a2 2 0 102-2 2 2 0 00-2 2z"/>
-        </svg>
-      </div>
-      <h3 class="text-3xl font-semibold mb-4">Nivel 2: Construye</h3>
-      <p class="text-gray-700 mb-6 leading-relaxed font-medium">Organiza tus ideas y valida a tu cliente ideal para crear bases sólidas.</p>
-      <ul class="list-disc text-gray-600 space-y-2 max-w-sm mx-auto">
-        <li>Mapeo y validación de clientes</li>
-        <li>Testeo de modelos y prototipos</li>
-      </ul>
-      <div aria-hidden="true" class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-20 h-20 bg-red-200 rounded-full opacity-20 blur-3xl group-hover:opacity-40 transition"></div>
+    <h3>Fundamentos Teóricos del Diagrama de Pareto</h3>
+    <div class="theory-section">
+        <p>El Diagrama de Pareto, desarrollado por Vilfredo Pareto en 1896, constituye una herramienta estadística fundamental en el control de calidad que combina:</p>
+        
+        <ul>
+            <li>Un gráfico de barras que representa frecuencias individuales</li>
+            <li>Una línea acumulativa que muestra el porcentaje total</li>
+        </ul>
+        
+        <h4>Bases Matemáticas</h4>
+        <p>El principio 80/20 tiene fundamentación matemática mediante:</p>
+        
+        <div class="math-formula">
+            <p>Ley de Potencia: P(x) ∝ x<sup>-α</sup></p>
+            <p>Distribución Pareto: Pr(X > x) = (x/x<sub>m</sub>)<sup>-k</sup></p>
+        </div>
+        
+        <h4>Aplicaciones en Control Estadístico de Procesos</h4>
+        <ol>
+            <li>Análisis de defectos</li>
+            <li>Clasificación ABC de inventarios</li>
+            <li>Identificación de causas raíz</li>
+        </ol>
     </div>
 
-    <div class="relative group bg-white p-10 rounded-3xl shadow-lg border-l-8 border-yellow-400 cursor-default transform transition hover:-translate-y-3 hover:shadow-2xl">
-      <div class="flex justify-center mb-6">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-yellow-400 group-hover:text-yellow-500 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true" >
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.333 0-4 1.333-4 4s2.667 4 4 4 4-1.333 4-4-2.667-4-4-4z"/>
-        </svg>
-      </div>
-      <h3 class="text-3xl font-semibold mb-4">Nivel 3: Crece</h3>
-      <p class="text-gray-700 mb-6 leading-relaxed font-medium">Forma parte de una comunidad que impulsa tu crecimiento con feedback real y celebración.</p>
-      <ul class="list-disc text-gray-600 space-y-2 max-w-sm mx-auto">
-        <li>Foros activos y networking</li>
-        <li>Feedback de expertos</li>
-        <li>Celebra tus resultados</li>
-      </ul>
-      <div aria-hidden="true" class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-20 h-20 bg-yellow-200 rounded-full opacity-20 blur-3xl group-hover:opacity-40 transition"></div>
-    </div>
-  </div>
-</section>
+    <h3>Principio 80/20 explicado con lenguaje técnico</h3>
+    <p>Este principio, también conocido como la Ley de Pareto, sugiere que en muchos fenómenos, una pequeña proporción de causas es responsable de la mayor parte de los efectos. En el contexto industrial, esto significa que un número limitado de defectos o problemas puede ser responsable de la mayoría de los fallos en un proceso.</p>
 
-<!-- BENEFICIOS CON ICONOS MODERNOS -->
-<section id="beneficios" class="bg-gradient-to-tr from-red-700 to-orange-600 text-white py-24 px-6 md:px-10" aria-labelledby="beneficios-title">
-  <h2 id="beneficios-title" class="text-center text-4xl font-extrabold mb-16">Beneficios Exclusivos</h2>
-  <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-14">
-    <div class="flex flex-col items-center space-y-4">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-yellow-300 drop-shadow-lg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M16 12l-4-4-4 4"/><line x1="12" y1="16" x2="12" y2="8"/></svg>
-      <h3 class="text-2xl font-semibold">Mentoría 1 a 1</h3>
-      <p class="text-center max-w-xs text-yellow-100">Asesoría personalizada para aclarar dudas y guiar tu emprendimiento paso a paso.</p>
-    </div>
-    <div class="flex flex-col items-center space-y-4">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-yellow-300 drop-shadow-lg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 01-12 0"/><path d="M12 14v6"/><path d="M8 20h8"/></svg>
-      <h3 class="text-2xl font-semibold">Comunidad</h3>
-      <p class="text-center max-w-xs text-yellow-100">Conéctate con otros emprendedores para compartir experiencias y crecer juntos.</p>
-    </div>
-    <div class="flex flex-col items-center space-y-4">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-yellow-300 drop-shadow-lg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 3v4M8 3v4"/></svg>
-      <h3 class="text-2xl font-semibold">Retos</h3>
-      <p class="text-center max-w-xs text-yellow-100">Supera desafíos que impulsarán tu crecimiento y confianza.</p>
-    </div>
-    <div class="flex flex-col items-center space-y-4">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-yellow-300 drop-shadow-lg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20l9-5-9-5-9 5 9 5z"/><path d="M12 12v8"/></svg>
-      <h3 class="text-2xl font-semibold">Insignias & Premios</h3>
-      <p class="text-center max-w-xs text-yellow-100">Reconoce y celebra cada avance con nuestra gamificación exclusiva.</p>
-    </div>
-  </div>
-</section>
+    <h3>Aplicación en la industria</h3>
+    <p>El Diagrama de Pareto se utiliza en diversas industrias para mejorar la calidad y la eficiencia. Permite a los gerentes y analistas de datos identificar áreas críticas que requieren atención y recursos.</p>
 
-<!-- GAMIFICACIÓN -->
-<section class="max-w-7xl mx-auto py-20 px-6 md:px-10" aria-labelledby="gamificacion-title">
-  <h2 id="gamificacion-title" class="text-center text-4xl font-extrabold mb-10 text-gray-900">Sistema de Gamificación</h2>
-  <p class="max-w-3xl mx-auto text-center text-lg text-gray-700 mb-12">Nuestra comunidad utiliza insignias, premios y rankings para motivarte y reconocer tu esfuerzo. ¡Queda entre los mejores y crece tu reputación!</p>
-  <div class="grid grid-cols-1 sm:grid-cols-3 gap-12 text-center">
-    <div class="p-8 bg-yellow-50 rounded-3xl shadow-lg hover:shadow-2xl transition cursor-default">
-      <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-5 h-16 w-16 text-yellow-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8c-1.333 0-4 1.333-4 4s2.667 4 4 4 4-1.333 4-4-2.667-4-4-4z"></path></svg>
-      <h3 class="text-xl font-bold mb-2">Insignias de Logro</h3>
-      <p class="text-sm text-gray-700">Cada pequeño avance es una insignia que reconoce tu progreso.</p>
-    </div>
-    <div class="p-8 bg-yellow-50 rounded-3xl shadow-lg hover:shadow-2xl transition cursor-default">
-      <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-5 h-16 w-16 text-yellow-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20l9-5-9-5-9 5 9 5z"></path><path d="M12 12v8"></path></svg>
-      <h3 class="text-xl font-bold mb-2">Premios Motivacionales</h3>
-      <p class="text-sm text-gray-700">Incentivos exclusivos para quienes demuestren constancia y participación.</p>
-    </div>
-    <div class="p-8 bg-yellow-50 rounded-3xl shadow-lg hover:shadow-2xl transition cursor-default">
-      <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-5 h-16 w-16 text-yellow-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 20h10M7 10h10M7 4h10"></path></svg>
-      <h3 class="text-xl font-bold mb-2">Ranking Positivo</h3>
-      <p class="text-sm text-gray-700">Comparte tu progreso y destaca dentro de nuestra comunidad.</p>
-    </div>
-  </div>
-</section>
+    <h3>Relación con ISO 9001:2015 y la mejora continua</h3>
+    <p>La norma ISO 9001:2015 enfatiza la importancia de la mejora continua en los sistemas de gestión de calidad. El Diagrama de Pareto es una herramienta clave en este proceso, ya que ayuda a las organizaciones a identificar y abordar las no conformidades de manera efectiva.</p>
 
-<!-- TESTIMONIOS CON SLIDER + FOTOS -->
-<section id="testimonios" class="bg-gray-50 py-24 px-6 md:px-10 max-w-7xl mx-auto" aria-labelledby="testimonios-title">
-  <h2 id="testimonios-title" class="text-center text-4xl font-extrabold mb-16 text-gray-900">Historias de Éxito</h2>
-  <div tabindex="0" aria-label="Carrusel de testimonios" class="overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-pl-6 flex gap-10 focus:outline-yellow-400">
-    <!-- Testimonio 1 -->
-    <article class="snap-center bg-white rounded-3xl shadow-xl p-9 max-w-sm flex-none ring-1 ring-transparent focus-within:ring-yellow-400 transition hover:scale-[1.03] hover:shadow-2xl">
-      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d088bd26-d07d-4ed5-b409-af287bad6f73.png" alt="María López, emprendedora destacada" class="rounded-full mx-auto mb-7 shadow-md object-cover w-24 h-24" loading="lazy" />
-      <p class="text-gray-700 italic mb-6 leading-relaxed">
-        “Avanza Conmigo me ayudó a superar miedos y poner en marcha mi idea. La mentoría en vivo fue clave para clarificar cada paso.”
-      </p>
-      <footer class="font-semibold text-center text-yellow-500">– María López</footer>
-    </article>
-    <!-- Testimonio 2 -->
-    <article class="snap-center bg-white rounded-3xl shadow-xl p-9 max-w-sm flex-none ring-1 ring-transparent focus-within:ring-yellow-400 transition hover:scale-[1.03] hover:shadow-2xl">
-      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/95caf053-670b-48c0-91d8-705b3b7a148d.png" alt="Jorge Martínez, fundador enfocado en tecnología" class="rounded-full mx-auto mb-7 shadow-md object-cover w-24 h-24" loading="lazy" />
-      <p class="text-gray-700 italic mb-6 leading-relaxed">
-        “Los retos y gamificación me mantuvieron motivado para consolidar mi negocio. La comunidad y mentores hacen la diferencia.”
-      </p>
-      <footer class="font-semibold text-center text-yellow-500">– Jorge Martínez</footer>
-    </article>
-    <!-- Testimonio 3 -->
-    <article class="snap-center bg-white rounded-3xl shadow-xl p-9 max-w-sm flex-none ring-1 ring-transparent focus-within:ring-yellow-400 transition hover:scale-[1.03] hover:shadow-2xl">
-      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0edf89ab-1eda-4223-8026-3dfe7f0fa711.png" alt="Laura Méndez, empresaria social y beneficiaria" class="rounded-full mx-auto mb-7 shadow-md object-cover w-24 h-24" loading="lazy" />
-      <p class="text-gray-700 italic mb-6 leading-relaxed">
-        “La retroalimentación constante y personalizada fue fundamental para ganar confianza y lanzar un proyecto exitoso.”
-      </p>
-      <footer class="font-semibold text-center text-yellow-500">– Laura Méndez</footer>
-    </article>
-  </div>
-</section>
-
-<!-- FAQ Acordeón Elegante -->
-<section id="faq" class="py-28 max-w-4xl mx-auto px-6 md:px-0" aria-labelledby="faq-title">
-  <h2 id="faq-title" class="text-center text-4xl font-extrabold mb-16 text-gray-900">Preguntas Frecuentes</h2>
-  <dl class="space-y-8 border-t border-gray-200 pt-10">
-    <div>
-      <dt>
-        <button class="faq-question flex w-full justify-between items-center text-lg font-semibold text-orange-600 hover:text-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2"
-          aria-expanded="false" aria-controls="faq1" id="faq1-btn">
-          ¿Cómo funcionan las mentorías en vivo?
-          <svg class="ml-4 h-6 w-6 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-          </svg>
-        </button>
-      </dt>
-      <dd id="faq1" class="faq-answer prose max-w-none pl-6 mt-3 text-gray-700" aria-labelledby="faq1-btn" hidden>
-        Las mentorías son sesiones personalizadas en tiempo real, donde te acompañamos, respondemos dudas y trabajamos juntos en tus objetivos.
-      </dd>
+    <div class="section-header">
+        <h2><span class="blue-accent">Visualización</span> Interactiva de Pareto</h2>
+        <div class="section-intro">
+            <p>Explora este gráfico dinámico construido con <strong>Chart.js</strong> que demuestra cómo aplicar el principio 80/20:</p>
+            <ul class="chart-features">
+                <li><i class="fas fa-mouse-pointer blue-icon"></i> Hover para detalles precisos</li>
+                <li><i class="fas fa-sliders-h blue-icon"></i> Datos ajustables</li>
+                <li><i class="fas fa-brain blue-icon"></i> Visualización cognitiva</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Tab links -->
+    <div class="tab">
+      <button class="tablinks active" onclick="openTab(event, 'InteractiveChart')">Gráfico Interactivo</button>
+      <button class="tablinks" onclick="openTab(event, 'ExcelGuide')">Guía Excel</button>
+      <button class="tablinks" onclick="openTab(event, 'PowerBIGuide')">Guía Power BI</button>
     </div>
 
-    <div>
-      <dt>
-        <button class="faq-question flex w-full justify-between items-center text-lg font-semibold text-orange-600 hover:text-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2"
-          aria-expanded="false" aria-controls="faq2" id="faq2-btn">
-          ¿Cuál es el compromiso de tiempo para participar?
-          <svg class="ml-4 h-6 w-6 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-          </svg>
-        </button>
-      </dt>
-      <dd id="faq2" class="faq-answer prose max-w-none pl-6 mt-3 text-gray-700" aria-labelledby="faq2-btn" hidden>
-        Una sesión semanal recomendada de 60 minutos, sumado a la interacción con la comunidad y actividades del programa.
-      </dd>
+    <!-- Tab content -->
+    <div id="InteractiveChart" class="tabcontent" style="display:block">
+    <div class="chart-container">
+        <canvas id="paretoChart"></canvas>
     </div>
 
-    <div>
-      <dt>
-        <button class="faq-question flex w-full justify-between items-center text-lg font-semibold text-orange-600 hover:text-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2"
-          aria-expanded="false" aria-controls="faq3" id="faq3-btn">
-          ¿Necesito experiencia previa para inscribirme?
-          <svg class="ml-4 h-6 w-6 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-          </svg>
-        </button>
-      </dt>
-      <dd id="faq3" class="faq-answer prose max-w-none pl-6 mt-3 text-gray-700" aria-labelledby="faq3-btn" hidden>
-        No necesitas experiencia, nuestro programa te guía desde la idea inicial hasta el crecimiento real de tu proyecto.
-      </dd>
-    </div>
-  </dl>
-</section>
+    <h3>Datos de Ejemplo</h3>
+    <p>A continuación, se presentan datos ficticios de defectos de producción que se utilizarán para crear el gráfico:</p>
+    <pre>
+| Tipo de Defecto | Frecuencia |
+|------------------|------------|
+| Rasguños         | 120        |
+| Fugas            | 80         |
+| Mal etiquetado   | 50         |
+| Otros            | 30         |
+    </pre>
 
-<!-- FORMULARIO DE INSCRIPCIÓN MODERNO Y ACCESIBLE -->
-<section id="inscribete" class="bg-gradient-to-r from-orange-400 to-red-600 text-white py-28 px-6 md:px-10 text-center">
-  <h2 class="text-4xl font-extrabold mb-8 max-w-4xl mx-auto">¡Inscríbete y Empieza a Avanzar Hoy!</h2>
-  <p class="mb-14 max-w-2xl mx-auto font-semibold text-lg leading-relaxed drop-shadow-md">
-    Completa el formulario y uno de nuestros mentores expertos se comunicará contigo para acompañarte desde el principio.
-  </p>
-  <form id="form-inscripcion" class="max-w-lg mx-auto space-y-8 text-left" novalidate>
-    <div>
-      <label for="nombre" class="block mb-3 text-lg font-semibold" id="label-nombre">Nombre Completo</label>
-      <input type="text" id="nombre" name="nombre" aria-labelledby="label-nombre" required minlength="3" placeholder="Tu nombre completo"
-        class="w-full px-5 py-4 rounded-lg border-2 border-yellow-400 text-gray-900 focus:outline-none focus:ring-4 focus:ring-yellow-500 focus:border-yellow-500 shadow-lg transition" />
-      <p class="mt-1 text-yellow-200 text-sm hidden" id="error-nombre" role="alert">Por favor, ingresa un nombre válido (mínimo 3 caracteres).</p>
-    </div>
-    <div>
-      <label for="correo" class="block mb-3 text-lg font-semibold" id="label-correo">Correo Electrónico</label>
-      <input type="email" id="correo" name="correo" aria-labelledby="label-correo" required placeholder="correo@ejemplo.com"
-        class="w-full px-5 py-4 rounded-lg border-2 border-yellow-400 text-gray-900 focus:outline-none focus:ring-4 focus:ring-yellow-500 focus:border-yellow-500 shadow-lg transition" />
-      <p class="mt-1 text-yellow-200 text-sm hidden" id="error-correo" role="alert">Por favor, ingresa un correo válido.</p>
-    </div>
-    <div>
-      <label for="idea" class="block mb-3 text-lg font-semibold" id="label-idea">Idea de Negocio</label>
-      <textarea id="idea" name="idea" aria-labelledby="label-idea" rows="5" required minlength="10" placeholder="Describe tu idea o proyecto"
-        class="w-full px-5 py-4 rounded-lg border-2 border-yellow-400 text-gray-900 focus:outline-none focus:ring-4 focus:ring-yellow-500 focus:border-yellow-500 shadow-lg transition resize-y"></textarea>
-      <p class="mt-1 text-yellow-200 text-sm hidden" id="error-idea" role="alert">Por favor, escribe una descripción válida (mínimo 10 caracteres).</p>
-    </div>
-    <button type="submit" aria-label="Enviar solicitud de mentoría" class="w-full bg-yellow-400 rounded-xl py-5 font-bold text-gray-900 text-2xl shadow-lg hover:bg-yellow-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-yellow-600 focus-visible:outline-offset-2 transition transform hover:scale-105">
-      Quiero mi mentoría
-    </button>
-  </form>
-</section>
+    <h2>Casos reales documentados</h2>
+    <h3>Toyota</h3>
+    <p>Toyota ha utilizado el Diagrama de Pareto para reducir las fallas en su sistema de frenos ABS, implementando análisis de datos en Power BI para identificar las causas raíz de los problemas.</p>
 
-<!-- FOOTER MODERNO -->
-<footer class="bg-gray-900 text-gray-300 py-14 px-6 md:px-10 font-semibold">
-  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-    <div class="text-center md:text-left">
-      <h3 class="text-yellow-400 text-2xl font-bold mb-2">Avanza Conmigo</h3>
-      <p>Mentoría en vivo para jóvenes emprendedores de Chimbote</p>
-      <p class="mt-2 text-sm">&copy; 2024 Avanza Conmigo. Todos los derechos reservados.</p>
-    </div>
-    <div class="flex space-x-9 text-gray-400">
-      <a href="#" title="Facebook" aria-label="Facebook" target="_blank" rel="noopener noreferrer" class="hover:text-yellow-400 transition">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12a10 10 0 0010 10v-7h-2v-3h2v-2c0-2 1-4 4-4h3v3h-3c-.5 0-1 .5-1 1v2h4l-1 3h-3v7a10 10 0 0010-10z"/>
-        </svg>
-      </a>
-      <a href="#" title="Instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer" class="hover:text-yellow-400 transition">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-          <path d="M16 11.37a4 4 0 11-4.74-4.74"/>
-          <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/>
-        </svg>
-      </a>
-      <a href="#" title="WhatsApp" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer" class="hover:text-yellow-400 transition">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linejoin="round" stroke-linecap="round" d="M2.2 19.8c-1.1-5 3.3-10 7-11.5a7 7 0 0110 5.9v1.4a7 7 0 01-6.2 6.2c-1.3.2-2.5-1.1-3.3-1.9l-2.7 2.7z"/>
-          <path d="M16 11.5c.5 1-1 2-1 2S13 14 13 13"/>
-        </svg>
-      </a>
-    </div>
-  </div>
-</footer>
+    <h3>Nestlé Perú</h3>
+    <p>Nestlé Perú aplicó el Diagrama de Pareto en Excel para mejorar el etiquetado de sus productos, lo que resultó en una disminución significativa de errores y un aumento en la satisfacción del cliente.</p>
 
+    <h3>Pfizer</h3>
+    <p>Pfizer ha implementado el Diagrama de Pareto junto con inteligencia artificial para controlar la calidad de sus ampollas, asegurando que los estándares de producción se mantengan altos.</p>
+
+    <h3>Plastisur Perú</h3>
+    <p>Plastisur Perú utilizó el Diagrama de Pareto en Excel para analizar los defectos por turnos, lo que les permitió optimizar sus procesos de producción y reducir costos.</p>
+
+    </div> <!-- Close Interactive Chart tab -->
+
+    <div id="ExcelGuide" class="tabcontent">
+        <h3>Paso a Paso para Excel</h3>
+        <ol>
+            <li>Preparar datos en columnas (defectos vs frecuencia)</li>
+            <li>Ordenar de mayor a menor frecuencia</li>
+            <li>Calcular porcentaje individual: =(frecuencia)/(total)*100</li>
+            <li>Calcular porcentaje acumulado</li>
+            <li>Insertar gráfico combinado (barras + línea)</li>
+            <li>Formatear ejes y estilo profesional</li>
+        </ol>
+        <img src="https://via.placeholder.com/800x400?text=Excel+Pareto" alt="Excel Pareto Example" style="width:100%; margin-top:20px;">
+    </div>
+
+    <div id="PowerBIGuide" class="tabcontent">
+        <h3>Implementación en Power BI</h3>
+        <ol>
+            <li>Importar datos desde Excel/CSV</li>
+            <li>Crear medidas DAX para frecuencia y % acumulado</li>
+            <li>Crear visualización combinada (columnas + línea)</li>
+            <li>Agregar segmentaciones por turno/línea</li>
+            <li>Publicar dashboard en Power BI Service</li>
+        </ol>
+        <img src="https://via.placeholder.com/800x400?text=PowerBI+Pareto" alt="PowerBI Pareto Example" style="width:100%; margin-top:20px;">
+    </div>
+
+    <h2>Conclusión Técnica y Perspectivas Avanzadas</h2>
+    <div class="technical-conclusion">
+        <h3>Exhaustivo Análisis de Beneficios</h3>
+        <p>El Diagrama de Pareto trasciende su función básica como herramienta gráfica, posicionándose como una solución estratégica integral para:</p>
+        
+        <ul class="benefits-list">
+            <li>Priorización basada en evidencia estadística cuantificable</li>
+            <li>Asignación óptima de recursos mediante análisis de impacto</li>
+            <li>Identificación de correlaciones no evidentes en datos multivariantes</li>
+            <li>Base para modelos predictivos mediante análisis de tendencias</li>
+        </ul>
+
+        <h3>Integración con Tecnologías Emergentes</h3>
+        <div class="tech-integration">
+            <div class="tech-card">
+                <h4>Power BI Advanced Analytics</h4>
+                <ul>
+                    <li>Conexión directa con Azure Machine Learning</li>
+                    <li>Automatización mediante Power Automate</li>
+                    <li>Análisis predictivo integrado</li>
+                </ul>
+            </div>
+            <div class="tech-card">
+                <h4>Excel Power Tools</h4>
+                <ul>
+                    <li>Integración con Power Query para ETL</li>
+                    <li>Modelos de datos relacionales</li>
+                    <li>DAX para métricas avanzadas</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>Perspectivas Futuras</h3>
+        <p>La evolución del Diagrama de Pareto en la era del Big Data presenta oportunidades para:</p>
+        <ol class="future-outlook">
+            <li>Integración con algoritmos de clustering para segmentación automática</li>
+            <li>Implementación en tiempo real mediante IoT y edge computing</li>
+            <li>Análisis multivariante mediante técnicas de machine learning</li>
+        </ol>
+    </div>
+
+    <footer class="footer-section">
+        <div class="footer-header">
+            <h3>Referencias Académicas</h3>
+            <span class="footer-icon"><i class="fas fa-book-open"></i></span>
+        </div>
+        <div class="reference-grid">
+        <p>ISO 9001:2015. (2015). International Organization for Standardization.</p>
+        <p>Juran, J. M. (1999). <em>Juran's Quality Handbook</em>. McGraw-Hill.</p>
+    </footer>
+    
+    <div class="fab">
+        <i class="fas fa-download"></i>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-  // Cambio header background al hacer scroll
-  const headerEl = document.getElementById('page-header');
-  window.addEventListener('scroll', () => {
-    if(window.scrollY > 30) {
-      headerEl.classList.add('scrolled');
-    } else {
-      headerEl.classList.remove('scrolled');
-    }
-  });
+    const ctx = document.getElementById('paretoChart').getContext('2d');
+    const data = {
+        labels: ['Rasguños', 'Fugas', 'Mal etiquetado', 'Otros'],
+        datasets: [{
+            label: 'Frecuencia',
+            data: [120, 80, 50, 30],
+            backgroundColor: 'rgba(25, 118, 210, 0.6)',
+            borderColor: 'rgba(25, 118, 210, 1)',
+            borderWidth: 1,
+            type: 'bar',
+        }, {
+            label: 'Porcentaje Acumulado',
+            data: [0, 0, 0, 0], // Placeholder for cumulative data
+            type: 'line',
+            borderColor: 'rgba(255, 87, 34, 1)',
+            fill: false,
+            yAxisID: 'y-axis-1',
+        }]
+    };
 
-  // Toggle mobile menu con overlay
-  const menuBtn = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
-  let menuOpen = false;
+    const options = {
+        scales: {
+            y: {
+                beginAtZero: true,
+                title: {
+                    display: true,
+                    text: 'Frecuencia'
+                }
+            },
+            'y-axis-1': {
+                type: 'linear',
+                position: 'right',
+                title: {
+                    display: true,
+                    text: 'Porcentaje Acumulado'
+                },
+                ticks: {
+                    callback: function(value) {
+                        return value + '%';
+                    }
+                }
+            }
+        },
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    label: function(tooltipItem) {
+                        if (tooltipItem.dataset.type === 'line') {
+                            return tooltipItem.dataset.label + ': ' + tooltipItem.raw + '%';
+                        }
+                        return tooltipItem.dataset.label + ': ' + tooltipItem.raw;
+                    }
+                }
+            }
+        }
+    };
 
-  menuBtn.addEventListener('click', () => {
-    menuOpen = !menuOpen;
-    menuBtn.setAttribute('aria-expanded', menuOpen);
-    if(menuOpen) {
-      // Crear menú dinámico
-      mobileMenu.innerHTML = `
-        <a href="#mentorias" class="block py-4 px-6 text-white font-semibold border-b border-yellow-400 hover:bg-yellow-400 hover:text-gray-900 transition focus:outline-none focus:ring-4 focus:ring-yellow-300">Mentorías</a>
-        <a href="#niveles" class="block py-4 px-6 text-white font-semibold border-b border-yellow-400 hover:bg-yellow-400 hover:text-gray-900 transition focus:outline-none focus:ring-4 focus:ring-yellow-300">Niveles</a>
-        <a href="#beneficios" class="block py-4 px-6 text-white font-semibold border-b border-yellow-400 hover:bg-yellow-400 hover:text-gray-900 transition focus:outline-none focus:ring-4 focus:ring-yellow-300">Beneficios</a>
-        <a href="#mentores" class="block py-4 px-6 text-white font-semibold border-b border-yellow-400 hover:bg-yellow-400 hover:text-gray-900 transition focus:outline-none focus:ring-4 focus:ring-yellow-300">Mentores</a>
-        <a href="#testimonios" class="block py-4 px-6 text-white font-semibold border-b border-yellow-400 hover:bg-yellow-400 hover:text-gray-900 transition focus:outline-none focus:ring-4 focus:ring-yellow-300">Testimonios</a>
-        <a href="#faq" class="block py-4 px-6 text-white font-semibold border-b border-yellow-400 hover:bg-yellow-400 hover:text-gray-900 transition focus:outline-none focus:ring-4 focus:ring-yellow-300">FAQ</a>
-        <a href="#inscribete" class="block py-5 px-6 mt-4 bg-yellow-400 text-gray-900 font-bold rounded-lg text-center hover:bg-yellow-300 focus:outline-none focus:ring-4 focus:ring-yellow-300 transition">Quiero mi mentoría</a>
-      `;
-      mobileMenu.classList.remove('hidden','hide');
-      mobileMenu.classList.add('overlay-open','show');
-      document.body.style.overflow = 'hidden'; // evitar scroll fondo
-    } else {
-      mobileMenu.classList.add('hide');
-      mobileMenu.classList.remove('overlay-open','show');
-      setTimeout(() => {
-        mobileMenu.classList.add('hidden');
-        mobileMenu.innerHTML = '';
-        document.body.style.overflow = '';
-      }, 300);
-    }
-  });
-
-  // FAQ accordion
-  document.querySelectorAll('.faq-question').forEach(button => {
-    button.addEventListener('click', () => {
-      const expanded = button.getAttribute('aria-expanded') === 'true';
-      const answerId = button.getAttribute('aria-controls');
-      const answer = document.getElementById(answerId);
-
-      button.setAttribute('aria-expanded', !expanded);
-      if(expanded) {
-        answer.hidden = true;
-        answer.classList.remove('open');
-        button.querySelector('svg').style.transform = 'rotate(0deg)';
-      } else {
-        answer.hidden = false;
-        answer.classList.add('open');
-        button.querySelector('svg').style.transform = 'rotate(180deg)';
-      }
+    const paretoChart = new Chart(ctx, {
+        type: 'bar',
+        data: data,
+        options: options
     });
-  });
 
-  // Validación formulario robusta con feedback inline
-  const form = document.getElementById('form-inscripcion');
-  const nombreInput = form.nombre;
-  const correoInput = form.correo;
-  const ideaInput = form.idea;
+    // Calculate cumulative percentage
+    const frequencies = [120, 80, 50, 30];
+    const total = frequencies.reduce((a, b) => a + b, 0);
+    let cumulative = 0;
+    const cumulativeData = frequencies.map(freq => {
+        cumulative += freq;
+        return Math.round((cumulative / total) * 100);
+    });
 
-  const errorNombre = document.getElementById('error-nombre');
-  const errorCorreo = document.getElementById('error-correo');
-  const errorIdea = document.getElementById('error-idea');
+    // Update the line dataset with cumulative data
+    paretoChart.data.datasets[1].data = cumulativeData;
+    paretoChart.update();
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    let valid = true;
-
-    if(nombreInput.value.trim().length < 3) {
-      errorNombre.classList.remove('hidden');
-      nombreInput.classList.add('ring-4', 'ring-yellow-400');
-      valid = false;
-      nombreInput.setAttribute('aria-invalid', 'true');
-    } else {
-      errorNombre.classList.add('hidden');
-      nombreInput.classList.remove('ring-4', 'ring-yellow-400');
-      nombreInput.removeAttribute('aria-invalid');
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
     }
-
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if(!emailPattern.test(correoInput.value.trim())) {
-      errorCorreo.classList.remove('hidden');
-      correoInput.classList.add('ring-4', 'ring-yellow-400');
-      valid = false;
-      correoInput.setAttribute('aria-invalid', 'true');
-    } else {
-      errorCorreo.classList.add('hidden');
-      correoInput.classList.remove('ring-4', 'ring-yellow-400');
-      correoInput.removeAttribute('aria-invalid');
-    }
-
-    if(ideaInput.value.trim().length < 10) {
-      errorIdea.classList.remove('hidden');
-      ideaInput.classList.add('ring-4', 'ring-yellow-400');
-      valid = false;
-      ideaInput.setAttribute('aria-invalid', 'true');
-    } else {
-      errorIdea.classList.add('hidden');
-      ideaInput.classList.remove('ring-4', 'ring-yellow-400');
-      ideaInput.removeAttribute('aria-invalid');
-    }
-
-    if(valid) {
-      alert('¡Inscripción exitosa! Te contactaremos pronto para agendar tu mentoría.');
-      form.reset();
-    }
-  });
 </script>
-
 </body>
 </html>
-
